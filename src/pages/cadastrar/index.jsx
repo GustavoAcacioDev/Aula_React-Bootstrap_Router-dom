@@ -1,41 +1,41 @@
 import React from 'react';
 import Rodape from '../../components/rodape';
 import Menu from '../../components/menu';
-import { Form, Button } from 'react-bootstrap';
-
+import { Form, Button, Container} from 'react-bootstrap';
+import './cadastrar.css'
 
 const Cadastrar =  () => {
     return(
         <div>
             <Menu/>
-            <Form>
-            <Form.Group controlId="formBasicEmail">
-                <Form.Label>Nome </Form.Label>
-                <Form.Control type="text" placeholder="Nome completo" />
-                <Form.Text className="text-muted">
-                We'll never share your name with anyone else.
-                </Form.Text>
-            </Form.Group>
-            <Form.Group controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
-                <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-                </Form.Text>
-            </Form.Group>
-
-            <Form.Group controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
-            <Form.Group controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
-            </Form.Group>
-            <Button variant="primary" type="submit">
-                Submit
-            </Button>
-            </Form>
-            <Rodape/>
+             <Container className='form-height'>
+                 <Form className='form-signin'>
+                    <div className='text-center'>
+                       <img src="" alt=""/>
+                    </div>
+                    <br/>
+                    <small>Informe os dados abaixo</small>
+                    <hr/>
+                    <Form.Group controlId="formBasicEmail">
+                        <Form.Label>nome</Form.Label>
+                        <Form.Control type="email" placeholder="Nome Completo" required/>
+                    </Form.Group>
+                    <Form.Group controlId="formBasicEmail">
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control type="email" placeholder="Informe o email" required/>
+                    </Form.Group>
+                    <Form.Group controlId="formBasicSenha">
+                        <Form.Label>Senha</Form.Label>
+                        <Form.Control type="password" placeholder="Senha" required/>
+                    </Form.Group>
+                    <Button variant="primary" type="submit">
+                        Enviar
+                    </Button>
+                    <br/><br/>
+                    <a href="/cadastrar" style={{ marginTop : '30px' }}>Não tenho conta!</a>
+                 </Form>
+             </Container>
+        
         </div>
     )
 }
