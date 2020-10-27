@@ -17,13 +17,13 @@ const Login =  () => {
     const logar = (event) => {
         event.preventDefault();
 
-        fetch('http://localhost:5000/api/account/login',{
+        fetch('http://localhost:62602/api/Account/login',{
             method : 'POST',
             body : JSON.stringify({
                 email : email,
                 senha : senha
             }),
-            header : {
+            headers : {
                 'content-type' : 'application/json'
             }
         })
@@ -32,9 +32,11 @@ const Login =  () => {
             if(response.ok){
                 return response.json();
             }
+
             alert('Dados Invalidos');
         })
         .then(data => {
+            console.log(data)
 
             localStorage.setItem('token-nyous-tarde', data.token);
 
