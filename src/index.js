@@ -31,7 +31,7 @@ const RotaPrivadaAdmin = ({component : Component, ...rest}) => (
     {...rest}
     render = { 
       props =>
-      localStorage.getItem('token-nyous-tarde') !== null && jwt_decode(localStorage.getItem('token-nyous-tarde')).role !== 'admin' ?
+      localStorage.getItem('token-nyous-tarde') !== null && jwt_decode(localStorage.getItem('token-nyous-tarde')).role !== 'Admin' ?
         <Redirect to={{pathname : '/login', state :{from : props.location}}}/> :
         <Component {...props} />
     }
